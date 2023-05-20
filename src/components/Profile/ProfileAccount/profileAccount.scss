@@ -12,6 +12,10 @@
     margin-bottom: 2rem;
     width: 80%;
     padding: 1.5rem;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      max-width: 300px;
+    }
 
     &__argent-bank {
       padding: 0;
