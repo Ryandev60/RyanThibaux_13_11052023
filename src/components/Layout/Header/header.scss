@@ -1,0 +1,34 @@
+.navbar {
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+
+    img {
+        height: 54px;
+
+    }
+
+    i {
+        color: #000000;
+    }
+    .fa-user-circle {
+        margin-right: 0.25rem;
+    }
+
+    .fa-sign-out {
+        margin-left: 0.25rem;
+    }
+
+    span {
+        font-weight: bold;
+    }
+}
+
+.navbar-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+}

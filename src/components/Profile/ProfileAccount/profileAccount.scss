@@ -1,0 +1,38 @@
+.profile__account {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    margin-bottom: 2rem;
+    width: 80%;
+    padding: 1.5rem;
+
+    &__argent-bank {
+      padding: 0;
+      font-size: 1rem;
+      font-weight: normal;
+    }
+    &__amount {
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+    &__btn {
+      display: block;
+      width: 200px;
+      height: fit-content;
+      padding: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 1rem;
+      border-color: #00bc77;
+      background-color: #00bc77;
+      color: #fff;
+    }
+  }
+}
