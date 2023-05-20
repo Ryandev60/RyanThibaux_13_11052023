@@ -1,5 +1,5 @@
 import axios from "axios";
-import {URL_SIGNIN, URL_PROFILE} from "../config.ts";
+import {URL_SIGNIN, URL_PROFILE, URL_UPDATE_USER} from "../config.ts";
 import {Action, Dispatch} from "@reduxjs/toolkit";
 
 export const USER_SIGNIN = "USER_SIGNIN";
@@ -33,7 +33,7 @@ export const userSignIn = (data: userSignInData) => {
 
 
 export const userProfile = () => {
-    return async (dispatch: Dispatch) => {
+    return async (dispatch: Dispatch<Action>) => {
         try {
             const token = await localStorage.getItem("token") ?? sessionStorage.getItem("token")
             const response = await axios.post(URL_PROFILE, token, {
@@ -50,11 +50,28 @@ export const userProfile = () => {
 }
 
 export const userSignOut = () => {
-    return async (dispatch: Dispatch) => {
+    return async (dispatch: Dispatch<Action>) => {
         try {
             localStorage.removeItem("token")
             sessionStorage.removeItem("token")
             dispatch({type: USER_SIGNOUT, payload: {}})
+        } catch (error) {
+            console.log(error);
+            throw error
+        }
+    }
+}
+
+export const userUpdate = (data: any) => {
+    return async (dispatch: Dispatch<Action>) => {
+        try {
+            const token = await localStorage.getItem("token") ?? sessionStorage.getItem("token")
+            const response = await axios.put(URL_UPDATE_USER, data, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            })
+            dispatch({type: USER_PROFILE, payload: response.data.body})
         } catch (error) {
             console.log(error);
             throw error

@@ -18,7 +18,7 @@ const Header: React.FC = () => {
                     <img src="./img/argentBankLogo.png" alt="ArgentBankLogo"/>
                 </NavLink>
                 {user && user.id ? (
-                        <NavLink to="/" className="navbar-link">
+                        <NavLink to="/profile" className="navbar-link">
                             <i className="fa fa-user-circle"></i>
                             <span>{user.firstName}</span>
                             <i className="fa fa-sign-out" onClick={handleLogout}></i>

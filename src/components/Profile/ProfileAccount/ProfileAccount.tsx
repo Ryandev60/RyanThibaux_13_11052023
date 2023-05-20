@@ -8,7 +8,7 @@ const ProfileAccount = () => {
     }
     const account = dataProfileAccount.map((item) => {
         return (
-            <article className="profile__account__item">
+            <article className="profile__account__item" key={item.argentBank}>
                 <div>
                     <h3 className="profile__account__item__argent-bank">{item.argentBank}</h3>
                     <p className="profile__account__item__amount">{formatAmount(item.amount)}</p>

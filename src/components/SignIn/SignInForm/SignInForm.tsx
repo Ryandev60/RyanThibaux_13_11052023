@@ -5,9 +5,9 @@ import {userProfile, userSignIn} from "../../../actions/user.action.ts";
 import {useNavigate} from "react-router-dom";
 
 const SignInForm = () => {
-    const userNameForm = useRef<HTMLInputElement>()
-    const passwordForm = useRef<HTMLInputElement>()
-    const checkboxForm = useRef<HTMLInputElement>()
+    const userNameIpt = useRef<HTMLInputElement>(null)
+    const passwordIpt = useRef<HTMLInputElement>(null)
+    const checkboxIpt = useRef<HTMLInputElement>(null)
 
     const [error, setError] = useState<string>('')
 
@@ -17,9 +17,9 @@ const SignInForm = () => {
         e.preventDefault();
 
         const data = {
-            email: userNameForm.current?.value,
-            password: passwordForm.current?.value,
-            rememberMe: checkboxForm.current?.checked
+            email: userNameIpt.current?.value,
+            password: passwordIpt.current?.value,
+            rememberMe: checkboxIpt.current?.checked
         }
         try {
             await dispatch(userSignIn(data))
@@ -36,15 +36,15 @@ const SignInForm = () => {
             <legend className="sign-in__form__legend">Sign In</legend>
             <div className="sign-in__form__group">
                 <label htmlFor="username" className="sign-in__form__group__label">Username</label>
-                <input type="text" id="username" className="sign-in__form__group__input" ref={userNameForm}/>
+                <input type="text" id="username" className="sign-in__form__group__input" ref={userNameIpt}/>
             </div>
             <div className="sign-in__form__group">
                 <label htmlFor="password" className="sign-in__form__group__label">Password</label>
-                <input type="password" id="password" className="sign-in__form__group__input" ref={passwordForm}/>
+                <input type="password" id="password" className="sign-in__form__group__input" ref={passwordIpt}/>
             </div>
             <div className="sign-in__form__group--checkbox">
                 <input type="checkbox" id="checkbox" className="sign-in__form__group--checkbox__input"
-                       ref={checkboxForm}/>
+                       ref={checkboxIpt}/>
                 <label htmlFor="checkbox" className="sign-in__form__group--checkbox__label">Remember me</label>
             </div>
             <button type="submit" className="sign-in__form__button">Sign In</button>
