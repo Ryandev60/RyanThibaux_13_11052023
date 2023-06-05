@@ -11,7 +11,6 @@ const ProfileHeader: React.FC = () => {
 
     const user = useSelector(state => state.userReducer.user)
 
-
     const dispatch = useDispatch()
 
     const handleChangeName = (e: React.MouseEvent<HTMLFormElement>) => {

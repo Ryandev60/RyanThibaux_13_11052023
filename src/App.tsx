@@ -1,13 +1,14 @@
-import Home from "./components/Home/Home.tsx";
-import Header from "./components/Layout/Header/Header.tsx";
-import Footer from "./components/Layout/Footer/Footer.tsx";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./assets/index.css"
-import SignIn from "./components/SignIn/SignIn.tsx";
-import {useDispatch, useSelector,} from "react-redux";
+import {useDispatch} from "react-redux";
 import {userProfile} from "./actions/user.action.ts";
 import {useEffect} from "react";
+import Header from "./components/Layout/Header/Header.tsx";
+import SignIn from "./components/SignIn/SignIn.tsx";
+import Home from "./components/Home/Home.tsx";
+import Footer from "./components/Layout/Footer/Footer.tsx";
 import Profile from "./components/Profile/Profile.tsx";
+import Error from "./components/Error/Error.tsx";
 import AuthRoute from "./components/Private/AuthRoute.tsx";
 import NotAuthRoute from "./components/Private/NotAuthRoute.tsx";
 
@@ -25,11 +26,12 @@ function App() {
             <BrowserRouter>
                 <Header/>
                 <Routes>
-                    <Route element={<NotAuthRoute />}>
+                    <Route element={<NotAuthRoute/>}>
                         <Route path="/signin" element={<SignIn/>}/>
                     </Route>
                     <Route path="/" element={<Home/>}/>
-                    <Route element={<AuthRoute />}>
+                    <Route path="*" element={<Error/>}/>
+                    <Route element={<AuthRoute/>}>
                         <Route path="/profile" element={<Profile/>}/>
                     </Route>
                 </Routes>

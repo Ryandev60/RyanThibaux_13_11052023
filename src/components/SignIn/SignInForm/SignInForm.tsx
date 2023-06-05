@@ -27,7 +27,11 @@ const SignInForm = () => {
             navigate('/profile')
 
         } catch(error) {
-            setError(error.response.data.message)
+            if(error.message === "Network Error" ){
+                setError("Error 500 : Network Error")
+            } else {
+                setError(error.response.data.message)
+            }
         }
     }
     return (
