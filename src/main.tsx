@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import {configureStore} from '@reduxjs/toolkit'
 import {Provider} from "react-redux";
-import rootReducer from "./reducers";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import rootReducer from "./redux/reducers";
 
 const store = configureStore({
     reducer: rootReducer,

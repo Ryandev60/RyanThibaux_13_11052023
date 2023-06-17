@@ -1,7 +1,7 @@
 import "./signInForm.scss"
 import {FormEvent, useRef, useState} from "react";
 import {useDispatch} from "react-redux";
-import {userProfile, userSignIn} from "../../../actions/user.action.ts";
+import {userProfile, userSignIn} from "../../../redux/actions/user.action.ts";
 import {useNavigate} from "react-router-dom";
 
 const SignInForm = () => {

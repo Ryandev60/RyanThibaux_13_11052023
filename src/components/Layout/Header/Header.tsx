@@ -2,7 +2,7 @@ import "./header.scss";
 import {NavLink, useNavigate} from "react-router-dom";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {userSignOut} from "../../../actions/user.action.ts";
+import {userSignOut} from "../../../redux/actions/user.action.ts";
 
 const Header: React.FC = () => {
     const user = useSelector(state => state.userReducer.user)

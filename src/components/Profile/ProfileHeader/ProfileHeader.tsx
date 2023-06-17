@@ -2,7 +2,7 @@ import "./profileHeader.scss";
 import {useSelector} from "react-redux";
 import React, {useRef, useState} from "react";
 import {useDispatch} from "react-redux";
-import {userUpdate} from "../../../actions/user.action.ts";
+import {userUpdate} from "../../../redux/actions/user.action.ts";
 
 const ProfileHeader: React.FC = () => {
     const [editName, setEditName] = useState<boolean>(false)

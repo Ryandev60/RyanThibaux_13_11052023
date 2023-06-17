@@ -3,7 +3,20 @@ import {Action} from "@reduxjs/toolkit";
 
 const initialState = {};
 
-export default function userReducer(state = initialState, action: Action) {
+interface UserData {
+    email: string,
+    firstName: string,
+    lastName: string,
+    createdAt: string,
+    updatedAt: string,
+    id: string
+}
+
+interface UserAction extends Action {
+    payload: UserData;
+}
+
+export default function userReducer(state = initialState, action: UserAction) {
     switch (action.type) {
         case USER_SIGNIN:
             return {

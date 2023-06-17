@@ -1,5 +1,5 @@
 import axios from "axios";
-import {URL_SIGNIN, URL_PROFILE, URL_UPDATE_USER} from "../config.ts";
+import {URL_SIGNIN, URL_PROFILE, URL_UPDATE_USER} from "../../config.ts";
 import {Action, Dispatch} from "@reduxjs/toolkit";
 
 export const USER_SIGNIN = "USER_SIGNIN";

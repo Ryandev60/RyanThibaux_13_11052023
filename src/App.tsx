@@ -1,7 +1,7 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import "./assets/index.css"
 import {useDispatch} from "react-redux";
-import {userProfile} from "./actions/user.action.ts";
+import {userProfile} from "./redux/actions/user.action.ts";
 import {useEffect} from "react";
 import Header from "./components/Layout/Header/Header.tsx";
 import SignIn from "./components/SignIn/SignIn.tsx";
